@@ -1,0 +1,511 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+body {
+  background: #343541;
+}
+
+#app {
+  width: 80%;
+  height: 100vh;
+  margin-left: 20%;
+  background: #343541;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#container {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#chat_container {
+  flex: 1;
+  width: 90%;
+  height: 90%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+}
+
+/* hides scrollbar */
+#chat_container::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 15px;
+}
+
+.ai {
+  background: #40414F;
+}
+
+.chat {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  background: #5436DA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai .profile {
+  background: #10a37f;
+}
+
+.profile img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.message {
+  flex: 1;
+  color: #dcdcdc;
+  font-size: 20px;
+  max-width: 100%;
+  overflow-x: scroll;
+  white-space: pre-wrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* hides scrollbar */
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+form {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px;
+  background: #40414F;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+textarea {
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  background: transparent;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+form img {
+  width: 30px;
+  height: 30px;
+}
+
+#logo{
+  width: 20vw;
+  height: 100vh;
+  background: #545774;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+
+#icon{
+  margin-top: 5px;
+  padding-top: 5px;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+}
+
+#navieText{
+  text-align: center;
+  font-size: 20px; /* Increase font size */
+  color: #cfe4df;
+  margin-bottom: 950px; /* Add margin to move it below the image */
+  padding: 15px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-weight: 500px;
+  
+}
+
+#new-chat-btn {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  background: #40414F;
+  border-radius: 10px;
+  width: 50%;
+  height: 7%;
+  text-align: center;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 190px;
+  transition: background-color 0.3s; /* Add transition for smooth color change */
+  color: black;
+}
+
+#new-chat-btn:hover {
+  background: #f0f0f1; /* Change background color on hover */
+}
+
+
+#Newchatlogo {
+  margin-right: 10px; /* Adjust margin between the image and text */
+  height: 30px;
+  width: 30px;
+}
+
+#sidebar {
+  width: 100%;
+  position:absolute;
+  height: 60%; /* Adjust height based on your layout */
+  background: #2a2b37;
+  border-radius: 2px;
+  margin-top: 243px; /* Adjust margin as needed */
+  padding: 20px;
+  color: #b6b4b4;
+  overflow-y:auto;
+  display:flexbox
+}
+
+#chat-history-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#chat-history-list li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#chat-history-list li:hover {
+  text-decoration: underline;
+}
+
+h2{
+  text-align: center;
+  background: #343541;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: normal;
+  font-weight:lighter;
+  padding: 8px;
+}
+
+#clear-chat-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #40414F;
+  width: 16%;
+  height: 9%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 0; /* Adjust positioning based on your layout */
+  right: 0; /* Adjust positioning based on your layout */
+  margin-top: 20px; /* Adjust margin as needed */
+  margin-right: 210px; /* Adjust margin as needed */
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: background-color 0.3s;
+  color: black;
+  z-index: 1; /* Set z-index to display the button in front */
+  float: left;
+}
+
+#clear-chat-btn:hover {
+  background: #f0f0f1; /* Change background color on hover */
+}
+
+
+#floating-prompt {
+  position:absolute;
+  top: 40%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  background-color: #5848a1;
+  padding: 10px;
+  height: 50%;
+  width: 35%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  z-index: 999;
+  transition: opacity 0.5s ease;
+  display: flex; /* Add flexbox display */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  color: white;
+}
+
+#floating-prompt span{
+  font-size: 18px;
+  text-align:left;
+  position: relative;
+}
+
+#floating-prompt.hide {
+  opacity: 0;
+}
+
+#floating-prompt-logo {
+  height: 40%; /* Adjust height as needed */
+  margin-right: 20px; /* Add margin between logo and text */
+  margin-left: 10px;
+}
+
+#menu-btn{
+  position: absolute;
+  display: inline-block;
+  margin-inline-start: 90%;
+  display: none;
+  margin-top: 10px;
+} 
+
+
+
+
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  #app {
+    width: 100%; /* Change to 100% to fill the entire viewport width */
+    height: 100vh;
+    margin-left: 0; /* Remove left margin */
+    background: #343541;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+
+  #floating-prompt {
+    width: 60%; /* Adjust width to fit smaller screens */
+    max-width: 90%; /* Limit maximum width */
+    height: 30%;
+    padding: 10px; /* Adjust padding */
+    align-items: center;
+    transform: translate(-65%, -50%);
+    
+  }
+  #floating-prompt-logo{
+    height: 20%;
+  }
+
+  #floating-prompt span{
+    font-size: 12px;
+  }
+
+  #menu-btn{
+    display: block; /* Display menu button below logo on small screens */
+  }
+
+  #menu-btn.show{
+    display: block; /* Display menu button below logo on small screens */
+  }
+
+  #container {
+    width: 100%;
+    height: 100%;
+    display: none;
+    animation: fadeIn 1s ease-in-out;
+    box-sizing: border-box;
+    margin-left: auto; /* Set left margin to auto */
+    margin-right: 0; /* Remove right margin */
+  }
+  
+  #container.show {
+    display: block; /* Show the container div */
+    
+  }
+  
+  #icon {
+    margin-top: 5px;
+    padding-top: 5px;
+    width: 60px; /* Set the width to 100% to take the full width */
+    height: 90px;
+    align-items: center;
+  }
+  
+  #logo {
+    width: 80%; /* Set the width to 100% to take the full width */
+    height: 94%;
+    background: #545774;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #new-chat-btn {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    background: #40414F;
+    border-radius: 10px;
+    width: 50%;
+    height: 7%;
+    text-align: center;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    position: absolute;
+    z-index: 2;
+    margin-top: 150px;
+    transition: background-color 0.3s; /* Add transition for smooth color change */
+    color: black;
+  }
+  
+  #new-chat-btn:hover {
+    background: #f0f0f1; /* Change background color on hover */
+  }
+
+  #navieText{
+    text-align: center;
+    font-size: 22px; /* Increase font size */
+    color: #cfe4df;
+    margin-bottom: 950px; /* Add margin to move it below the image */
+    padding: 15px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500px;
+    
+  }
+  #sidebar {
+    width: 100%;
+    position:absolute;
+    height: 67%; /* Adjust height based on your layout */
+    background: #2a2b37;
+    border-radius: 2px;
+    margin-top: 243px; /* Adjust margin as needed */
+    padding: 20px;
+    color: #b6b4b4;
+    overflow-y:auto;
+    display:flexbox
+  }
+  
+  #chat-history-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #chat-history-list li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  #chat-history-list li:hover {
+    text-decoration: underline;
+  }
+  
+  h2{
+    text-align: center;
+    background: #343541;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: normal;
+    font-weight:lighter;
+    padding: 13px;
+  }
+  
+  #clear-chat-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #40414F;
+    width: 19%;
+    height: 9%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 0; /* Adjust positioning based on your layout */
+    right: 0; /* Adjust positioning based on your layout */
+    margin-top: 20px; /* Adjust margin as needed */
+    margin-right: 210px; /* Adjust margin as needed */
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: background-color 0.3s;
+    color: black;
+    z-index: 1; /* Set z-index to display the button in front */
+    float: left;
+  }
+  
+  #clear-chat-btn:hover {
+    background: #f0f0f1; /* Change background color on hover */
+  }
+  
+  
+  
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+ 
+  
+
+
+
+}
+
+
+
+
+

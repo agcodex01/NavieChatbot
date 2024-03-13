@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="assets/chatbot.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>NAVIE chatbot</title>
+  </head>
+
+  <body>
+    <div id="floating-prompt">
+      <img id="floating-prompt-logo" src="assets/cbt.png" alt="Logo" />
+      <span
+        >Hello, I'm Navie, here to navigate you through the details of the
+        student manual. How may I assist you today?</span
+      >
+    </div>
+
+    <!-- Insert the menu button here -->
+    <button id="menu-btn" type="button">
+      <img src="assets/menu.png" alt="menu" />
+    </button>
+
+    <div id="container" class="show">
+      <div id="logo">
+        <img id="icon" src="assets/cbt.png" alt="chatbot icon" />
+        <div id="navieText">NAVIE: STUDENT MANUAL CHATBOT</div>
+        <button id="new-chat-btn" type="button">
+          <img id="Newchatlogo" src="assets/ADD.png" /> New Chat
+        </button>
+
+        <div id="sidebar">
+          <h2>CHAT HISTORY</h2>
+          <ul id="chat-history-list"></ul>
+          <button id="clear-chat-btn" type="button">
+            <img id="clear" src="assets/clear.png" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="app">
+      <div id="chat_container"></div>
+      <form>
+        <textarea
+          name="prompt"
+          placeholder="Ask Navie about the Manual?"
+        ></textarea>
+        <button type="submit">
+          <img src="assets/send.svg" alt="send" />
+        </button>
+        <button id="voice-btn" type="button">
+          <img src="assets/mic.png" alt="voice" />
+        </button>
+      </form>
+    </div>
+
+    <script type='module' src="/script.js"></script>
+  </body>
+</html>
