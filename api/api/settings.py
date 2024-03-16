@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    '.vercel.app'
+    '.vercel.app',
+    '.ngrok-free.app'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
